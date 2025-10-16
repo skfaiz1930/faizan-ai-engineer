@@ -1,6 +1,9 @@
 import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
+import AIAutomation from "@/components/AIAutomation";
 import Projects from "@/components/Projects";
+import LearningResearch from "@/components/LearningResearch";
+import BeyondCode from "@/components/BeyondCode";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -8,7 +11,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <TechStack />
+      <AIAutomation />
       <Projects />
+      <LearningResearch />
+      <BeyondCode />
       <Footer />
     </div>
   );

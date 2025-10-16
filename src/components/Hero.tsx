@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -64,6 +64,17 @@ const Hero = () => {
             >
               <Mail className="h-6 w-6" />
             </a>
+          </div>
+
+          {/* Scroll Down Button */}
+          <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: '800ms' }}>
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <span className="text-sm font-medium">Scroll to explore</span>
+              <ChevronDown className="w-6 h-6 animate-bounce" />
+            </button>
           </div>
         </div>
       </div>

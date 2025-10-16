@@ -2,52 +2,60 @@ import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border/50 relative">
+    <footer className="py-16 border-t border-border/50 relative">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h3 className="text-2xl font-bold">Let's Connect</h3>
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h3 className="text-3xl md:text-4xl font-bold">
+              💬 Let's Build Something Amazing
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              I'm always excited to discuss AI, automation, and systems design — whether it's scaling infrastructure 
+              or building the next intelligent product.
+            </p>
+          </div>
           
-          <div className="flex flex-wrap gap-6 justify-center items-center text-muted-foreground">
+          <div className="flex flex-wrap gap-6 justify-center items-center">
             <a 
               href="mailto:faiz.dev@gmail.com" 
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Mail className="h-5 w-5" />
               faiz.dev@gmail.com
             </a>
-            <span className="hidden md:inline">|</span>
+            <span className="hidden md:inline text-muted-foreground">|</span>
             <a 
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Linkedin className="h-5 w-5" />
               LinkedIn
             </a>
-            <span className="hidden md:inline">|</span>
+            <span className="hidden md:inline text-muted-foreground">|</span>
             <a 
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Github className="h-5 w-5" />
               GitHub
             </a>
-            <span className="hidden md:inline">|</span>
+            <span className="hidden md:inline text-muted-foreground">|</span>
             <a 
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Twitter className="h-5 w-5" />
               Twitter
             </a>
           </div>
           
-          <p className="text-sm text-muted-foreground pt-6">
+          <p className="text-sm text-muted-foreground pt-6 border-t border-border/30">
             © {new Date().getFullYear()} Faiz. Built with React & Tailwind CSS.
           </p>
         </div>
