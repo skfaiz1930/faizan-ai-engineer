@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const navRef = useRef<HTMLUListElement>(null);
 
   const navItems = [
     { id: "hero", label: "Home" },
@@ -12,6 +14,26 @@ const Navbar = () => {
     { id: "beyond", label: "About" },
     { id: "contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const updateIndicator = () => {
+      if (navRef.current) {
+        const activeButton = navRef.current.querySelector(
+          `[data-section="${activeSection}"]`
+        ) as HTMLElement;
+        if (activeButton) {
+          setIndicatorStyle({
+            left: activeButton.offsetLeft,
+            width: activeButton.offsetWidth,
+          });
+        }
+      }
+    };
+
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [activeSection]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,17 +74,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
-      <div className="bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-6 py-3 shadow-lg">
-        <ul className="flex gap-1 items-center">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
+      <div className="bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-2 py-2 shadow-lg">
+        <ul ref={navRef} className="flex gap-1 items-center relative">
+          {/* Sliding indicator */}
+          <div
+            className="absolute bg-primary rounded-full transition-all duration-300 ease-out h-[calc(100%-4px)] top-[2px]"
+            style={{
+              left: `${indicatorStyle.left}px`,
+              width: `${indicatorStyle.width}px`,
+            }}
+          />
+          
           {navItems.map((item) => (
             <li key={item.id}>
               <button
+                data-section={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`relative z-10 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                   activeSection === item.id
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
