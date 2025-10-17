@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
       

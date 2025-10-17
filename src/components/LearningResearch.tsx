@@ -2,7 +2,7 @@ import { Search, Brain, BookOpen } from "lucide-react";
 
 const LearningResearch = () => {
   return (
-    <section className="py-20 relative">
+    <section id="learning" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12 animate-fade-in">
           <div className="text-center space-y-4">
