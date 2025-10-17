@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 animate-fade-in">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
       <div className="bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-2 py-2 shadow-lg">
         <ul ref={navRef} className="flex gap-1 items-center relative">
           {/* Sliding indicator */}
