@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -75,7 +76,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
-      <div className="bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-2 py-2 shadow-lg">
+      <div className="bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-2 py-2 shadow-lg flex items-center gap-3">
         <ul ref={navRef} className="flex gap-1 items-center relative">
           {/* Sliding indicator */}
           <div
@@ -102,6 +103,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <ThemeToggle />
       </div>
     </nav>
   );
