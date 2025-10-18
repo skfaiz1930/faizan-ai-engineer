@@ -4,8 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
+import { PostHogProvider } from "@/components/PostHogProvider";
+import { initPostHog } from "@/lib/posthog";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+
+// Initialize PostHog
+initPostHog();
 
 const queryClient = new QueryClient();
 
@@ -16,11 +21,13 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <PostHogProvider>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </PostHogProvider>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
