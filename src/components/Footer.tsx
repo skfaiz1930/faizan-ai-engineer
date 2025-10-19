@@ -1,53 +1,66 @@
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-16 border-t border-border/50 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h3 className="text-3xl md:text-4xl font-bold">
-              💬 Let's Build Something Amazing
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always excited to discuss AI, automation, and systems design —
-              whether it's scaling infrastructure or building the next
-              intelligent product.
-            </p>
+    <footer id="contact" className="py-20 border-t border-border/50 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto space-y-12">
+          {/* Contact Form Section */}
+          <div className="animate-fade-in">
+            <ContactForm />
           </div>
 
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-border/30" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-4 text-muted-foreground">Or connect with me</span>
+            </div>
+          </div>
+
+          {/* Social Links */}
           <div className="flex flex-wrap gap-6 justify-center items-center">
             <a
               href="mailto:skfaiz0929@gmail.com"
-              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
-              <Mail className="h-5 w-5" />
-              skfaiz0929@gmail.com
+              <span className="relative">
+                <span className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/40 transition-all duration-300" />
+                <span className="relative text-foreground group-hover:text-primary transition-colors">
+                  skfaiz0929@gmail.com
+                </span>
+              </span>
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
-              <Linkedin className="h-5 w-5" />
-              LinkedIn
+              <Linkedin className="h-5 w-5 group-hover:text-primary transition-colors" />
+              <span className="text-foreground group-hover:text-primary transition-colors">LinkedIn</span>
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
-              <Github className="h-5 w-5" />
-              GitHub
+              <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
+              <span className="text-foreground group-hover:text-primary transition-colors">GitHub</span>
             </a>
-         
           </div>
 
-          <p className="text-sm text-muted-foreground pt-6 border-t border-border/30">
+          {/* Copyright */}
+          <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border/30">
             © {new Date().getFullYear()} Faizan. Built with React & Tailwind CSS.
           </p>
         </div>

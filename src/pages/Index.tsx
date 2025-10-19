@@ -6,10 +6,12 @@ import Projects from "@/components/Projects";
 import LearningResearch from "@/components/LearningResearch";
 import BeyondCode from "@/components/BeyondCode";
 import Footer from "@/components/Footer";
+import CursorTrail from "@/components/CursorTrail";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <CursorTrail />
       <Navbar />
       <Hero />
       <TechStack />
