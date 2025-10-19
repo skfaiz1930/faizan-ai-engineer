@@ -1,7 +1,23 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const taglines = [
+    "Specializing in full-stack engineering, AI automation, and secure deployments - connecting data, design, and user feedback from planning to launch.",
+    "Specializing in leading the complete product journey — from planning and architecture to AI-enabled automation, analytics, and user feedback loops.",
+    "Specializing in AI-powered systems that learn, adapt, and optimize user engagement through analytics.",
+    "I design systems that think, learn, and scale — blending AI, automation, and DevOps to drive real-world impact.",
+    "Engineer with a mission to build secure, high-performance systems — from backend to cloud to AI automation"
+  ];
+
+  const [tagline, setTagline] = useState("");
+
+  useEffect(() => {
+    const randomTagline = taglines[Math.floor(Math.random() * taglines.length)];
+    setTagline(randomTagline);
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient mesh background */}
@@ -24,10 +40,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Specializing in <span className="text-foreground font-semibold">secure, scalable systems</span>,{" "}
-            <span className="text-foreground font-semibold">DevOps</span>, and{" "}
-            <span className="text-foreground font-semibold">AI automation</span>.
-            Built and scaled applications for <span className="text-primary font-bold">50K+ users</span>.
+            {tagline}
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center pt-4">

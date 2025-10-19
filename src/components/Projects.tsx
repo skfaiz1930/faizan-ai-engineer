@@ -10,7 +10,8 @@ const projects = [
     solution: "Implemented a fully automated CI/CD pipeline using Bitbucket, Docker, and AWS Secrets Manager, integrated with SonarCloud for continuous code quality and vulnerability scanning.",
     impact: "🚀 Reduced deployment time by 80%, improved release reliability, and enabled faster iteration cycles for over 50+ projects.",
     techStack: ["Bitbucket", "Docker", "AWS", "SonarCloud"],
-    category: "DevOps"
+    category: "DevOps",
+    isBest: false
   },
   {
     title: "AI-Powered Email Intelligence System",
@@ -19,7 +20,8 @@ const projects = [
     solution: "Built a high-volume email system using AWS SES with tracking and monitoring via CloudWatch, and developed an AI recommendation module that predicts optimal send times based on user engagement patterns.",
     impact: "📈 Scaled to 500K+ emails/day, improved open rates by 22%, and reduced email bounce rates significantly.",
     techStack: ["AWS SES", "CloudWatch", "AI/ML", "Node.js"],
-    category: "AI & Automation"
+    category: "AI & Automation",
+    isBest: true
   },
   {
     title: "Cloud Cost Optimization Framework",
@@ -28,7 +30,8 @@ const projects = [
     solution: "Audited all cloud resources, eliminated unused instances, and implemented cost governance policies with alerts and usage tracking.",
     impact: "💸 Reduced overall AWS spend by ~40%, freeing budget for new product development.",
     techStack: ["AWS", "CloudWatch", "Cost Explorer"],
-    category: "Cloud & Infrastructure"
+    category: "Cloud & Infrastructure",
+    isBest: false
   },
   {
     title: "Intelligent Error Monitoring & Resolution System",
@@ -37,7 +40,8 @@ const projects = [
     solution: "Developed an Error Handler & Alert System that automatically sends error reports to internal chat tools, logs incidents in Notion, and assigns ownership.",
     impact: "⚙️ Reduced mean time to resolution (MTTR) by 65%, ensuring faster recovery and better visibility.",
     techStack: ["Node.js", "Notion API", "Slack", "Monitoring"],
-    category: "DevOps"
+    category: "DevOps",
+    isBest: false
   },
   {
     title: "Self-Healing Uptime Monitoring System",
@@ -46,7 +50,8 @@ const projects = [
     solution: "Built an uptime monitoring tool integrated with recovery scripts that automatically restarts services upon outage detection.",
     impact: "🌐 Reduced downtime to under 5 minutes, achieving 99.98% uptime.",
     techStack: ["Node.js", "AWS", "Monitoring", "Bash"],
-    category: "DevOps"
+    category: "DevOps",
+    isBest: false
   },
   {
     title: "Enterprise Security & Compliance Suite",
@@ -55,7 +60,8 @@ const projects = [
     solution: "Conducted regular VAPT, code reviews, and implemented security hardening measures including DLP, BCP, endpoint protection, and log auditing using Microsoft 365.",
     impact: "🛡️ Achieved ISO 27001 certification, passed 50+ client security audits, and strengthened the organization's overall security posture.",
     techStack: ["Microsoft 365", "VAPT", "Security Tools"],
-    category: "Security"
+    category: "Security",
+    isBest: false
   },
   {
     title: "Secure Database Access Management Tool",
@@ -64,7 +70,8 @@ const projects = [
     solution: "Developed a secure database access tool that uses AWS SDK and EC2 Security Groups to whitelist developer IPs dynamically, sending automated notifications upon access.",
     impact: "🔒 Eliminated manual access risks and enhanced database access traceability and control.",
     techStack: ["AWS SDK", "EC2", "Node.js", "MongoDB"],
-    category: "Security"
+    category: "Security",
+    isBest: false
   },
   {
     title: "Product Analytics & User Behavior Insights",
@@ -73,7 +80,8 @@ const projects = [
     solution: "Implemented PostHog-based user tracking, Google Analytics, and Clarity heatmaps to analyze engagement patterns and user behavior.",
     impact: "📈 Increased product usage by 17% through data-driven feature optimization and A/B testing.",
     techStack: ["PostHog", "Google Analytics", "Clarity"],
-    category: "Analytics"
+    category: "Analytics",
+    isBest: false
   },
   {
     title: "A/B Testing & Conversion Optimization",
@@ -82,7 +90,8 @@ const projects = [
     solution: "Implemented an A/B testing framework to evaluate feature performance and user experience differences.",
     impact: "🎯 Improved survey response rate by 17%, leading to higher engagement and better data quality.",
     techStack: ["PostHog", "Analytics", "Node.js"],
-    category: "Analytics"
+    category: "Analytics",
+    isBest: false
   },
   {
     title: "Multi-Project DevOps Management",
@@ -91,7 +100,8 @@ const projects = [
     solution: "Standardized DevOps pipelines across the organization with shared templates and centralized deployment tracking.",
     impact: "🚀 Successfully handled deployment for 50+ projects, ensuring uniform quality and reduced rollout times.",
     techStack: ["Docker", "AWS", "CI/CD", "Bitbucket"],
-    category: "Cloud & Infrastructure"
+    category: "Cloud & Infrastructure",
+    isBest: false
   }
 ];
 
@@ -115,6 +125,9 @@ const Projects = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Problem-solving through scalable, secure, and data-driven solutions
             </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
+              👇 <span className="text-foreground font-medium">Explore different categories</span> to see my diverse project portfolio
+            </p>
           </div>
 
           {/* Category Filter */}
@@ -137,6 +150,7 @@ const Projects = () => {
                 key={project.title} 
                 {...project}
                 delay={index * 100}
+                isBest={project.isBest}
               />
             ))}
           </div>

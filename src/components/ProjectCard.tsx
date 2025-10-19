@@ -10,14 +10,22 @@ interface ProjectCardProps {
   impact: string;
   techStack: string[];
   delay?: number;
+  isBest?: boolean;
 }
 
-const ProjectCard = ({ title, tagline, problem, solution, impact, techStack, delay = 0 }: ProjectCardProps) => {
+const ProjectCard = ({ title, tagline, problem, solution, impact, techStack, delay = 0, isBest = false }: ProjectCardProps) => {
   return (
     <Card 
       className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 animate-slide-up"
       style={{ animationDelay: `${delay}ms` }}
     >
+      {isBest && (
+        <div className="absolute top-0 right-0 z-20">
+          <Badge className="rounded-tl-none rounded-br-none bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold px-4 py-1.5 shadow-lg">
+            ⭐ Best Project
+          </Badge>
+        </div>
+      )}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <CardHeader className="relative">
