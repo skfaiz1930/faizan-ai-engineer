@@ -19,7 +19,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Faiz
+              Faizan
             </span>
           </h1>
           
@@ -59,7 +59,7 @@ const Hero = () => {
               <Github className="h-6 w-6" />
             </a>
             <a 
-              href="mailto:faiz.dev@gmail.com"
+              href="mailto:skfaiz0929@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-6 w-6" />

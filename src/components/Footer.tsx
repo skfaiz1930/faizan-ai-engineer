@@ -10,23 +10,24 @@ const Footer = () => {
               💬 Let's Build Something Amazing
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always excited to discuss AI, automation, and systems design — whether it's scaling infrastructure 
-              or building the next intelligent product.
+              I'm always excited to discuss AI, automation, and systems design —
+              whether it's scaling infrastructure or building the next
+              intelligent product.
             </p>
           </div>
-          
+
           <div className="flex flex-wrap gap-6 justify-center items-center">
-            <a 
-              href="mailto:faiz.dev@gmail.com" 
+            <a
+              href="mailto:skfaiz0929@gmail.com"
               className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Mail className="h-5 w-5" />
-              faiz.dev@gmail.com
+              skfaiz0929@gmail.com
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
@@ -34,29 +35,20 @@ const Footer = () => {
               LinkedIn
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
             >
               <Github className="h-5 w-5" />
               GitHub
             </a>
-            <span className="hidden md:inline text-muted-foreground">|</span>
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg hover:text-primary transition-colors font-medium"
-            >
-              <Twitter className="h-5 w-5" />
-              Twitter
-            </a>
+         
           </div>
-          
+
           <p className="text-sm text-muted-foreground pt-6 border-t border-border/30">
-            © {new Date().getFullYear()} Faiz. Built with React & Tailwind CSS.
+            © {new Date().getFullYear()} Faizan. Built with React & Tailwind CSS.
           </p>
         </div>
       </div>
