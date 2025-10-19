@@ -13,39 +13,32 @@ import {
 const techCategories = [
   {
     icon: Code2,
-    title: "🧩 Core Languages",
+    title: "Core Languages",
     items: ["Node.js", "Python", "TypeScript", "JavaScript"],
   },
   {
     icon: Cloud,
-    title: "☁️ Cloud & Infrastructure",
-    items: ["AWS", "Docker","Jenkins", "RabbitMQ","Nginx", "Redis", "Vercel"],
+    title: "Cloud & Infrastructure",
+    items: ["AWS", "Docker", "Jenkins", "RabbitMQ", "Nginx", "Redis", "Vercel"],
   },
   {
     icon: Bot,
-    title: "🤖 AI, Automation & Agents",
-    items: ["OpenAI", "Clay", "Zapier", "Cursor", "Windsurf"],
+    title: "AI, Automation & Agents",
+    items: ["OpenAI", "Clay", "Zapier", "Cursor", "Windsurf", "Lovable"],
   },
   {
     icon: BarChart3,
-    title: "📊 Product & Analytics",
-    items: [
-      "PostHog",
-      "Metabase",
-      "Google Analytics",
-      "Microsoft Clarity",
-      "Prometheus",
-      "Grafana",
-    ],
+    title: "Product & Analytics",
+    items: ["PostHog", "Metabase", "Google Analytics", "Microsoft Clarity"],
   },
   {
     icon: Layers,
-    title: "🧱 Frontend Frameworks",
+    title: "Frontend Frameworks",
     items: ["React", "Angular", "Tailwind CSS", "Next.js"],
   },
   {
     icon: Lock,
-    title: "🔒 Security & Compliance",
+    title: "Security & Compliance",
     items: [
       "VAPT",
       "ISO 27001",
@@ -57,19 +50,20 @@ const techCategories = [
   },
   {
     icon: Rocket,
-    title: "🚀 DevOps & Deployment",
+    title: "DevOps & Deployment",
     items: [
       "Bitbucket Pipelines",
       "GitHub Actions",
       "CI/CD",
       "SonarCloud",
       "CloudWatch",
-      "Lovable",
+      "Prometheus",
+      "Grafana",
     ],
   },
   {
     icon: Users,
-    title: "🧠 Product Management & Research",
+    title: "Product Management & Research",
     items: [
       "A/B Testing",
       "User Interviews",
@@ -81,7 +75,7 @@ const techCategories = [
 
 const TechStack = () => {
   return (
-    <section id="tech" className="py-20 relative">
+    <section id="tech" className=" relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center space-y-12 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold">

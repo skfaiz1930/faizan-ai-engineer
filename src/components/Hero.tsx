@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4  relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <div className="inline-block">
             <span className="text-primary font-semibold text-lg mb-4 inline-block">

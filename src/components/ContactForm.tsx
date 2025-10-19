@@ -74,8 +74,8 @@ const ContactForm = () => {
     <>
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8 space-y-3">
-          <div className="flex items-center justify-center gap-2">
-            <Mail className="h-6 w-6 text-primary" />
+          <div className="flex items-center justify-center gap-3">
+            <Mail className="h-8 w-8 text-primary" />
             <h3 className="text-2xl md:text-3xl font-bold">Get In Touch</h3>
           </div>
           <p className="text-muted-foreground">

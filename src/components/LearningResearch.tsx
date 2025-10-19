@@ -16,10 +16,12 @@ const LearningResearch = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <Search className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                🔍 Exploring
-              </h3>
+              <div className="flex gap-3">
+                <Search className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                  Exploring
+                </h3>
+              </div>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• AI Agents</li>
                 <li>• RAG pipelines</li>
@@ -29,10 +31,12 @@ const LearningResearch = () => {
             </div>
 
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <Brain className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                🧠 Building
-              </h3>
+              <div className="flex gap-3">
+                <Brain className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                  Building
+                </h3>
+              </div>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Internal AI agent for system monitoring</li>
                 <li>• Predictive scaling automation</li>
@@ -41,10 +45,13 @@ const LearningResearch = () => {
             </div>
 
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <BookOpen className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                📚 Reading
-              </h3>
+              <div className="flex gap-3">
+                <BookOpen className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                  Reading
+                </h3>
+              </div>
+
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Growth Design - By Dan Benoni</li>
                 <li>• OpenAI Cookbook</li>
