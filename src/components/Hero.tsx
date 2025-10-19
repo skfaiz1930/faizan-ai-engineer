@@ -8,7 +8,7 @@ const Hero = () => {
     "Specializing in leading the complete product journey — from planning and architecture to AI-enabled automation, analytics, and user feedback loops.",
     "Specializing in AI-powered systems that learn, adapt, and optimize user engagement through analytics.",
     "I design systems that think, learn, and scale — blending AI, automation, and DevOps to drive real-world impact.",
-    "Engineer with a mission to build secure, high-performance systems — from backend to cloud to AI automation"
+    "Engineer with a mission to build secure, high-performance systems — from backend to cloud to AI automation",
   ];
 
   const [tagline, setTagline] = useState("");
@@ -19,10 +19,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-      
+
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -31,47 +34,54 @@ const Hero = () => {
               AI Engineer | SDE III
             </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Faizan
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {tagline}
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center pt-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground animate-glow">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground animate-glow"
+            >
               <FileText className="mr-2 h-5 w-5" />
               View Resume
             </Button>
-            <Button size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/80">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-secondary hover:bg-secondary/80"
+            >
               <Mail className="mr-2 h-5 w-5" />
               Contact Me
             </Button>
           </div>
 
           <div className="flex gap-6 justify-center pt-8">
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/shaikh-faizan-66b443216/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Linkedin className="h-6 w-6" />
             </a>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com/skfaiz1930"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Github className="h-6 w-6" />
             </a>
-            <a 
+            <a
               href="mailto:skfaiz0929@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
@@ -80,9 +90,14 @@ const Hero = () => {
           </div>
 
           {/* Scroll Down Button */}
-          <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <div
+            className="mt-16 flex justify-center animate-fade-in"
+            style={{ animationDelay: "800ms" }}
+          >
             <button
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              onClick={() =>
+                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+              }
               className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <span className="text-sm font-medium">Scroll to explore</span>

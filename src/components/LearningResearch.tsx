@@ -17,9 +17,11 @@ const LearningResearch = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
               <Search className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">🔍 Exploring</h3>
+              <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                🔍 Exploring
+              </h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Agent Orchestration</li>
+                <li>• AI Agents</li>
                 <li>• RAG pipelines</li>
                 <li>• LangGraph frameworks</li>
                 <li>• Vector databases</li>
@@ -28,7 +30,9 @@ const LearningResearch = () => {
 
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
               <Brain className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">🧠 Building</h3>
+              <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                🧠 Building
+              </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Internal AI agent for system monitoring</li>
                 <li>• Predictive scaling automation</li>
@@ -38,9 +42,11 @@ const LearningResearch = () => {
 
             <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
               <BookOpen className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-3 text-primary/90">📚 Reading</h3>
+              <h3 className="text-lg font-semibold mb-3 text-primary/90">
+                📚 Reading
+              </h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• "Designing Data-Intensive Applications"</li>
+                <li>• Growth Design - By Dan Benoni</li>
                 <li>• OpenAI Cookbook</li>
                 <li>• AWS Architecture Best Practices</li>
               </ul>

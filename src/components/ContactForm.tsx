@@ -43,6 +43,7 @@ const ContactForm = () => {
         name: data.name,
         email: data.email,
         subject: data.subject,
+        message: data.message
       });
 
       // Simulate API call (replace with actual email service integration)

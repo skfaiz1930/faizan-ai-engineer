@@ -21,7 +21,7 @@ const ProjectCard = ({ title, tagline, problem, solution, impact, techStack, del
     >
       {isBest && (
         <div className="absolute top-0 right-0 z-20">
-          <Badge className="rounded-tl-none rounded-br-none bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold px-4 py-1.5 shadow-lg">
+          <Badge className="rounded-tl rounded-tr rounded-br-none bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold px-4 py-1.5 shadow-lg">
             ⭐ Best Project
           </Badge>
         </div>

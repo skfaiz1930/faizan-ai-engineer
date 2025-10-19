@@ -3,10 +3,13 @@ import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-20 border-t border-border/50 relative overflow-hidden">
+    <footer
+      id="contact"
+      className="py-20 border-t border-border/50 relative overflow-hidden"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-30 pointer-events-none" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Contact Form Section */}
@@ -20,7 +23,9 @@ const Footer = () => {
               <div className="w-full border-t border-border/30" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-4 text-muted-foreground">Or connect with me</span>
+              <span className="bg-background px-4 text-muted-foreground">
+                Or connect with me
+              </span>
             </div>
           </div>
 
@@ -39,29 +44,34 @@ const Footer = () => {
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shaikh-faizan-66b443216/"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
               <Linkedin className="h-5 w-5 group-hover:text-primary transition-colors" />
-              <span className="text-foreground group-hover:text-primary transition-colors">LinkedIn</span>
+              <span className="text-foreground group-hover:text-primary transition-colors">
+                LinkedIn
+              </span>
             </a>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <a
-              href="https://github.com"
+              href="https://github.com/skfaiz1930"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
               <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
-              <span className="text-foreground group-hover:text-primary transition-colors">GitHub</span>
+              <span className="text-foreground group-hover:text-primary transition-colors">
+                GitHub
+              </span>
             </a>
           </div>
 
           {/* Copyright */}
           <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border/30">
-            © {new Date().getFullYear()} Faizan. Built with React & Tailwind CSS.
+            © {new Date().getFullYear()} Faizan. Built with React & Tailwind
+            CSS.
           </p>
         </div>
       </div>

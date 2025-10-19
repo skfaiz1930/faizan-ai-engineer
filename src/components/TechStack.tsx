@@ -1,32 +1,82 @@
 import { Badge } from "@/components/ui/badge";
-import { Code2, Cloud, Bot, BarChart3, Layers } from "lucide-react";
+import {
+  Code2,
+  Cloud,
+  Bot,
+  BarChart3,
+  Layers,
+  Users,
+  Rocket,
+  Lock
+} from "lucide-react";
 
 const techCategories = [
   {
     icon: Code2,
-    title: "🧩 Languages",
-    items: ["Node.js", "Python", "TypeScript", "JavaScript"]
+    title: "🧩 Core Languages",
+    items: ["Node.js", "Python", "TypeScript", "JavaScript"],
   },
   {
     icon: Cloud,
-    title: "☁️ Cloud & Infra",
-    items: ["AWS", "Docker", "Terraform", "Nginx", "Redis"]
+    title: "☁️ Cloud & Infrastructure",
+    items: ["AWS", "Docker","Jenkins", "RabbitMQ","Nginx", "Redis", "Vercel"],
   },
   {
     icon: Bot,
-    title: "🤖 AI & Automation",
-    items: ["OpenAI", "n8n", "Clay", "Zapier"]
+    title: "🤖 AI, Automation & Agents",
+    items: ["OpenAI", "Clay", "Zapier", "Cursor", "Windsurf"],
   },
   {
     icon: BarChart3,
-    title: "📊 Analytics",
-    items: ["PostHog", "Metabase", "Google Analytics", "Prometheus", "Grafana"]
+    title: "📊 Product & Analytics",
+    items: [
+      "PostHog",
+      "Metabase",
+      "Google Analytics",
+      "Microsoft Clarity",
+      "Prometheus",
+      "Grafana",
+    ],
   },
   {
     icon: Layers,
-    title: "🧱 Frontend",
-    items: ["React", "Angular", "Tailwind CSS"]
-  }
+    title: "🧱 Frontend Frameworks",
+    items: ["React", "Angular", "Tailwind CSS", "Next.js"],
+  },
+  {
+    icon: Lock,
+    title: "🔒 Security & Compliance",
+    items: [
+      "VAPT",
+      "ISO 27001",
+      "AWS Secrets Manager",
+      "IAM Policies",
+      "DLP",
+      "BCP",
+    ],
+  },
+  {
+    icon: Rocket,
+    title: "🚀 DevOps & Deployment",
+    items: [
+      "Bitbucket Pipelines",
+      "GitHub Actions",
+      "CI/CD",
+      "SonarCloud",
+      "CloudWatch",
+      "Lovable",
+    ],
+  },
+  {
+    icon: Users,
+    title: "🧠 Product Management & Research",
+    items: [
+      "A/B Testing",
+      "User Interviews",
+      "Product Roadmapping",
+      "Feature Prioritization",
+    ],
+  },
 ];
 
 const TechStack = () => {
@@ -35,26 +85,28 @@ const TechStack = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center space-y-12 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold">
-            🧠 Tech Stack, Simplified
+            🧠 Tech Stack
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {techCategories.map((category, categoryIndex) => {
               const Icon = category.icon;
               return (
-                <div 
+                <div
                   key={category.title}
                   className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all"
                   style={{ animationDelay: `${categoryIndex * 100}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <Icon className="w-5 h-5 text-primary" />
-                    <h3 className="font-semibold text-left">{category.title}</h3>
+                    <h3 className="font-semibold text-left">
+                      {category.title}
+                    </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.items.map((tech) => (
-                      <Badge 
-                        key={tech} 
+                      <Badge
+                        key={tech}
                         variant="secondary"
                         className="text-sm px-3 py-1"
                       >
