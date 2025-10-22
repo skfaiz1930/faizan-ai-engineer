@@ -54,14 +54,17 @@ const Hero = () => {
               <FileText className="mr-2 h-5 w-5" />
               View Resume
             </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-secondary hover:bg-secondary/80"
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Contact Me
-            </Button>
+          <Button
+            size="lg"
+            variant="secondary"
+            className="bg-secondary hover:bg-secondary/80"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            Contact Me
+          </Button>
           </div>
 
           <div className="flex gap-6 justify-center pt-8">
