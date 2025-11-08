@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import ResumeViewer from "@/components/ResumeViewer";
 
 const Hero = () => {
   const taglines = [
@@ -58,24 +59,18 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center pt-4">
+            <ResumeViewer />
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground animate-glow"
+              variant="secondary"
+              className="bg-secondary hover:bg-secondary/80"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <FileText className="mr-2 h-5 w-5" />
-              View Resume
+              <Mail className="mr-2 h-5 w-5" />
+              Contact Me
             </Button>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-secondary hover:bg-secondary/80"
-            onClick={() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Contact Me
-          </Button>
           </div>
 
           <div className="flex gap-6 justify-center pt-8">

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Sparkles, X } from "lucide-react";
+import { User, Sparkles, X } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import posthog from "@/lib/posthog";
 
@@ -17,7 +17,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
+const UserDetailsPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,7 +31,7 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
 
   useEffect(() => {
     // Check if popup was already shown in this session
-    const hasShownPopup = sessionStorage.getItem("newsletter_popup_shown");
+    const hasShownPopup = sessionStorage.getItem("user_details_popup_shown");
     
     if (hasShownPopup) {
       return;
@@ -40,10 +40,10 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
     // Show popup after delay
     const timer = setTimeout(() => {
       setIsOpen(true);
-      sessionStorage.setItem("newsletter_popup_shown", "true");
+      sessionStorage.setItem("user_details_popup_shown", "true");
       
       // Track popup view
-      posthog.capture("newsletter_popup_shown", {
+      posthog.capture("user_details_popup_shown", {
         delay_ms: delayMs,
       });
     }, delayMs);
@@ -55,8 +55,8 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
     setIsSubmitting(true);
     
     try {
-      // Track newsletter signup with PostHog
-      posthog.capture("newsletter_signup", {
+      // Track user details submission with PostHog
+      posthog.capture("user_details_submitted", {
         name: data.name,
         email: data.email,
         source: "popup",
@@ -68,12 +68,12 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
         email: data.email,
       });
 
-      // Simulate API call (replace with actual newsletter service)
+      // Simulate API call (replace with actual service)
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       toast({
-        title: "Welcome aboard! 🎉",
-        description: "You've successfully joined the newsletter.",
+        title: "Thank you! 🎉",
+        description: "Your details have been saved successfully.",
       });
 
       setIsOpen(false);
@@ -90,7 +90,7 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
   };
 
   const handleClose = () => {
-    posthog.capture("newsletter_popup_closed", {
+    posthog.capture("user_details_popup_closed", {
       has_interaction: form.formState.isDirty,
     });
     setIsOpen(false);
@@ -109,13 +109,13 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
 
         <DialogHeader className="text-center space-y-3">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/20 animate-fade-in">
-            <Sparkles className="h-6 w-6 text-primary" />
+            <User className="h-6 w-6 text-primary" />
           </div>
           <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Stay Updated!
+            Welcome! 👋
           </DialogTitle>
           <DialogDescription className="text-base text-foreground/80">
-            Get the latest updates, insights, and exclusive content delivered straight to your inbox.
+            Help me personalize your experience by sharing a few details.
           </DialogDescription>
         </DialogHeader>
 
@@ -173,8 +173,8 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
                 disabled={isSubmitting}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  {isSubmitting ? "Subscribing..." : "Subscribe"}
-                  <Mail className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  {isSubmitting ? "Submitting..." : "Continue"}
+                  <Sparkles className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                 </span>
               </Button>
             </div>
@@ -182,11 +182,11 @@ const NewsletterPopup = ({ delayMs = 10000 }: { delayMs?: number }) => {
         </Form>
 
         <p className="text-xs text-center text-muted-foreground pt-2">
-          No spam, unsubscribe anytime. We respect your privacy.
+          Your information is secure and will never be shared.
         </p>
       </DialogContent>
     </Dialog>
   );
 };
 
-export default NewsletterPopup;
+export default UserDetailsPopup;

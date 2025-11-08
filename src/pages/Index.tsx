@@ -7,13 +7,13 @@ import LearningResearch from "@/components/LearningResearch";
 import BeyondCode from "@/components/BeyondCode";
 import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
-import NewsletterPopup from "@/components/NewsletterPopup";
+import UserDetailsPopup from "@/components/UserDetailsPopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <CursorTrail />
-      <NewsletterPopup delayMs={10000} />
+      <UserDetailsPopup delayMs={10000} />
       <Navbar />
       <Hero />
       <TechStack />
