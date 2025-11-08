@@ -82,8 +82,7 @@ const ResumeViewer = () => {
       <Button
         onClick={handleOpenSelection}
         size="lg"
-        variant="outline"
-        className="border-border hover:bg-secondary hover:text-secondary-foreground group relative overflow-hidden"
+        className="bg-primary hover:bg-primary/90 text-primary-foreground animate-glow group relative overflow-hidden"
       >
         <span className="relative z-10 flex items-center gap-2">
           <FileText className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
