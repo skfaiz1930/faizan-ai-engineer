@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { Bot } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const Navbar = () => {
+interface NavbarProps {
+  onChatbotToggle: () => void;
+}
+
+const Navbar = ({ onChatbotToggle }: NavbarProps) => {
   const [activeSection, setActiveSection] = useState("hero");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const navRef = useRef<HTMLUListElement>(null);
@@ -103,7 +109,18 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onChatbotToggle}
+            className="hover:bg-accent hover:text-accent-foreground"
+            title="Toggle AI Assistant"
+          >
+            <Bot className="h-5 w-5" />
+          </Button>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
