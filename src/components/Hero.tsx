@@ -38,7 +38,7 @@ const Hero = () => {
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent inline-flex">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text inline-flex">
               {"Faizan".split("").map((letter, index) => (
                 <span
                   key={index}
