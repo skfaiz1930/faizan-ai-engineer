@@ -98,7 +98,7 @@ const ChatbotInterface = ({ isOpen, onClose, onNewMessage }: ChatbotInterfacePro
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "👋 Hi! I'm Faizan's AI portfolio assistant. Ask me anything about his projects, skills, or experience!",
+      content: "Hey there! 😏 I'm Faizan — yeah, the one who built this whole thing. Ask me anything about my projects, stack, or how I mass-applied to 2000+ jobs with AI!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -176,12 +176,17 @@ const ChatbotInterface = ({ isOpen, onClose, onNewMessage }: ChatbotInterfacePro
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-border bg-card">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <Bot className="h-5 w-5 text-primary-foreground" />
+          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center relative">
+            {/* Winking face in header */}
+            <span className="absolute top-2.5 left-1.5 w-1.5 h-1.5 rounded-full bg-primary-foreground animate-wink origin-center" />
+            <span className="absolute top-2.5 right-1.5 w-1.5 h-1.5 rounded-full bg-primary-foreground" />
+            <svg className="absolute bottom-2 w-4 h-2.5" viewBox="0 0 24 16" fill="none">
+              <path d="M4 4 C8 14, 16 14, 20 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-primary-foreground" />
+            </svg>
           </div>
           <div>
-            <h2 className="text-base font-bold">Portfolio Assistant</h2>
-            <p className="text-xs text-muted-foreground">Powered by AI</p>
+            <h2 className="text-base font-bold">Faizan</h2>
+            <p className="text-xs text-muted-foreground">Online • Ask me anything</p>
           </div>
         </div>
         <Button
