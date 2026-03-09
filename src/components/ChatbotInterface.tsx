@@ -98,7 +98,7 @@ const ChatbotInterface = ({ isOpen, onClose, onNewMessage }: ChatbotInterfacePro
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "👋 Hi! I'm Faizan's AI portfolio assistant. Ask me anything about his projects, skills, or experience!",
+      content: "Hey there! 😏 I'm Faizan — yeah, the one who built this whole thing. Ask me anything about my projects, stack, or how I mass-applied to 2000+ jobs with AI!",
     },
   ]);
   const [input, setInput] = useState("");
