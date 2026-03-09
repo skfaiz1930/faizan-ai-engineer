@@ -92,6 +92,10 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(217 91% 60% / 0.3)" },
           "50%": { boxShadow: "0 0 30px hsl(217 91% 60% / 0.6), 0 0 40px hsl(262 83% 58% / 0.4)" },
         },
+        "wink": {
+          "0%, 100%": { transform: "scaleY(1)" },
+          "45%, 55%": { transform: "scaleY(0.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
