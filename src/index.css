@@ -2,55 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+  Design system — all colours in HSL so Tailwind opacity modifiers work.
+  Semantic custom properties (--text-body etc.) bridge components to themes.
 */
 
 @layer base {
+  /* ─── Light theme (default) ─────────────────────────────────────── */
   :root {
-    /* Light theme */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 210 40% 98%;      /* #f8fafc */
+    --foreground: 222 47% 11%;      /* #0f172a */
 
-    --card: 0 0% 100%;
+    --card: 0 0% 100%;              /* #ffffff */
     --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 60%;
+    --primary: 217 91% 45%;         /* #2563eb */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 40% 96%;       /* #f1f5f9 */
+    --secondary-foreground: 215 25% 27%; /* #334155 */
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 47%; /* #64748b */
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 40% 94%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --border: 214 32% 89%;          /* #e2e8f0 */
+    --input: 210 40% 98%;           /* #f8fafc */
+    --ring: 217 91% 45%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    /* Semantic text layers — used via var() in components */
+    --text-primary:   222 47% 11%;  /* #0f172a — headings  */
+    --text-body:      215 25% 27%;  /* #334155 — body copy */
+    --text-muted:     215 16% 47%;  /* #64748b — subtle    */
+    --text-faint:     215 20% 65%;  /* #94a3b8 — hints     */
+
+    /* Badge */
+    --badge-bg:   213 100% 95%;    /* #eff6ff */
+    --badge-text: 221 83% 53%;     /* #1d4ed8 */
+
+    /* Tag / pill */
+    --tag-bg:    210 40% 96%;      /* #f1f5f9 */
+    --tag-text:  215 25% 36%;      /* #475569 */
+    --tag-border: 214 32% 89%;     /* #e2e8f0 */
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 45%), hsl(262 83% 58%));
     --gradient-secondary: linear-gradient(135deg, hsl(210 40% 98%), hsl(210 40% 96%));
-    --gradient-mesh: radial-gradient(at 27% 37%, hsl(217 91% 60% / 0.08) 0px, transparent 50%),
-                     radial-gradient(at 97% 21%, hsl(262 83% 58% / 0.08) 0px, transparent 50%),
-                     radial-gradient(at 52% 99%, hsl(217 91% 60% / 0.05) 0px, transparent 50%);
-    
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.15);
-    --shadow-card: 0 8px 24px hsl(0 0% 0% / 0.08);
-    
+    --gradient-mesh: radial-gradient(at 27% 37%, hsl(217 91% 45% / 0.06) 0px, transparent 50%),
+                     radial-gradient(at 97% 21%, hsl(262 83% 58% / 0.05) 0px, transparent 50%),
+                     radial-gradient(at 52% 99%, hsl(217 91% 45% / 0.04) 0px, transparent 50%);
+
+    --shadow-glow: 0 0 40px hsl(217 91% 45% / 0.12);
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* ─── Dark theme ────────────────────────────────────────────────── */
   .dark {
     --background: 220 26% 6%;
     --foreground: 210 40% 98%;
@@ -80,20 +97,48 @@ All colors MUST be HSL.
     --input: 220 20% 18%;
     --ring: 217 91% 60%;
 
+    /* Semantic text layers — dark */
+    --text-primary:  210 40% 98%;  /* near-white headings */
+    --text-body:     215 20% 75%;  /* #94a3b8 equivalent  */
+    --text-muted:    215 20% 65%;  /* muted-foreground    */
+    --text-faint:    215 16% 47%;  /* #64748b equivalent  */
+
+    --badge-bg:   220 20% 14%;
+    --badge-text: 217 91% 75%;
+
+    --tag-bg:    220 20% 14%;
+    --tag-text:  215 20% 65%;
+    --tag-border: 220 20% 18%;
+
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
     --gradient-secondary: linear-gradient(135deg, hsl(220 24% 8%), hsl(220 20% 14%));
     --gradient-mesh: radial-gradient(at 27% 37%, hsl(217 91% 60% / 0.15) 0px, transparent 50%),
                      radial-gradient(at 97% 21%, hsl(262 83% 58% / 0.15) 0px, transparent 50%),
                      radial-gradient(at 52% 99%, hsl(217 91% 60% / 0.1) 0px, transparent 50%);
-    
+
     --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.2);
     --shadow-card: 0 8px 24px hsl(220 26% 6% / 0.4);
   }
 }
 
 @layer base {
-  * {
+  /* Smooth transitions on theme switch */
+  *,
+  *::before,
+  *::after {
     @apply border-border;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  /* Exempt animation-only transitions from being clobbered */
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-glow {
+    transition: none;
   }
 
   body {
@@ -107,6 +152,57 @@ All colors MUST be HSL.
   }
 }
 
+/* ─── Global light-mode overrides for hardcoded hex colours ─────────────
+   Components use literal hex values committed during dark-only dev.
+   These selectors flip every known hardcoded dark colour to its
+   light-mode counterpart without touching every JSX file.
+   ─────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* ── Cards ─────────────────────────────────────────────────────── */
+  :root .bg-card\/50,
+  :root [class*="bg-card"] {
+    background-color: hsl(var(--card)) !important;
+    border-color: hsl(var(--border)) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+
+  /* ── Text that was hardcoded to dark-mode muted colours ─────────
+     Tailwind arbitrary values become class names like [color:#94a3b8].
+     We can't target those individually, so we override via data attrs
+     set by a global <body data-theme> if needed. Instead we rely on
+     the semantic CSS var approach below — components will be updated
+     to use var() classes.
+  ── ──────────────────────────────────────────────────────────────── */
+
+  /* ── Badge / secondary variant ─────────────────────────────────── */
+  :root .badge-secondary,
+  :root [data-slot="badge"][class*="secondary"] {
+    background-color: hsl(var(--tag-bg)) !important;
+    color: hsl(var(--tag-text)) !important;
+    border: 1px solid hsl(var(--tag-border)) !important;
+  }
+
+  /* ── Metric badge ───────────────────────────────────────────────── */
+  :root .metric-badge {
+    background-color: hsl(var(--badge-bg));
+    color: hsl(var(--badge-text));
+    font-weight: 700;
+  }
+
+  /* ── Navbar pill background ─────────────────────────────────────── */
+  :root nav .bg-background\/70 {
+    background-color: rgba(248, 250, 252, 0.9) !important;
+    border-color: hsl(var(--border)) !important;
+  }
+
+  /* ── Footer ─────────────────────────────────────────────────────── */
+  :root footer.contact-footer {
+    background-color: hsl(var(--secondary));
+    border-top: 1px solid hsl(var(--border));
+  }
+}
+
+/* ─── Animations & utilities ──────────────────────────────────────────── */
 @layer utilities {
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
@@ -121,50 +217,36 @@ All colors MUST be HSL.
   }
 
   @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes glow {
-    from {
-      box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
-    }
-    to {
-      box-shadow: 0 0 30px hsl(217 91% 60% / 0.6), 0 0 40px hsl(262 83% 58% / 0.4);
-    }
+    from { box-shadow: 0 0 20px hsl(217 91% 60% / 0.3); }
+    to   { box-shadow: 0 0 30px hsl(217 91% 60% / 0.6), 0 0 40px hsl(262 83% 58% / 0.4); }
   }
+
+  /* Semantic text utility classes  */
+  .text-body-primary { color: hsl(var(--foreground)); }
+  .text-body         { color: hsl(var(--text-body)); }
+  .text-muted-copy   { color: hsl(var(--text-muted)); }
+  .text-faint        { color: hsl(var(--text-faint)); }
 
   /* Micro-interactions */
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
-  }
+  .hover-lift  { @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg; }
+  .hover-glow  { @apply transition-all duration-300 hover:shadow-[0_0_20px_hsl(217_91%_60%_/_0.4)]; }
+  .hover-scale { @apply transition-transform duration-300 hover:scale-105; }
+  .focus-ring  { @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background; }
 
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_20px_hsl(217_91%_60%_/_0.4)];
-  }
-
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
-  }
-
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  /* Tech-stack pill / tag */
+  .tech-pill {
+    background-color: hsl(var(--tag-bg));
+    color: hsl(var(--tag-text));
+    border: 1px solid hsl(var(--tag-border));
   }
 }

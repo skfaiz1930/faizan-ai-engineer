@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
-import ResumeViewer from "@/components/ResumeViewer";
 
 const Hero = () => {
   return (
@@ -11,49 +9,33 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-[620px] mx-auto text-center space-y-8">
           {/* Eyebrow */}
-          <span className="text-sm font-mono uppercase tracking-widest text-primary/80">
+          <span className="text-[13px] font-medium tracking-[0.08em] uppercase text-primary">
             AI Engineer | SDE III
           </span>
 
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+          <h1 className="text-[36px] md:text-[56px] font-extrabold tracking-tight text-foreground leading-[1.1]">
             Hi, I'm Faizan
           </h1>
 
           {/* Location */}
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] font-normal text-muted-foreground">
             Mumbai, India · Great Manager Institute (Great Place to Work group)
           </p>
 
           {/* Bio paragraphs */}
-          <div className="space-y-6 text-left">
-            <p className="text-lg leading-[1.7] text-muted-foreground">
-              I build systems that make organizations visible to themselves. 4 years shipping AI products, scaling infrastructure, and solving problems most engineers don't notice until they become incidents — production AI agents, systems handling 150K emails/day, infrastructure scaled to 30K concurrent users.
+          <div className="space-y-5 text-left">
+            <p className="text-[17px] font-normal leading-[1.8] text-body">
+              I build systems that make organizations visible to themselves. 4 years shipping AI products, scaling infrastructure, and solving problems most engineers don't notice until they become incidents.
             </p>
 
-            <p className="text-lg leading-[1.7] text-muted-foreground">
+            <p className="text-[17px] font-normal leading-[1.8] text-body">
               Currently building ManagerOS — an AI decision layer for engineering managers. It surfaces burnout signals, psychological safety scores, and leadership blind spots before they become people problems.
             </p>
 
-            <p className="text-sm leading-relaxed text-muted-foreground/60">
-              Open to: early ManagerOS users · co-founders · people thinking seriously about AI in organizations
+            <p className="text-[13px] font-normal leading-[1.6] text-muted-foreground">
+              Open to: early ManagerOS users · people thinking seriously about AI in organizations and people who love breaking programs.
             </p>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center pt-6">
-            <ResumeViewer />
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-secondary hover:bg-secondary/80"
-              onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Contact Me
-            </Button>
           </div>
 
           {/* Social icons */}

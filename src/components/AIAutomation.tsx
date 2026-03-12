@@ -5,39 +5,46 @@ const AIAutomation = () => {
     <section id="ai" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12 animate-fade-in">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              ⚙️ AI & Automation Showcase
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <h2 className="text-[26px] md:text-[32px] font-bold text-foreground">
+              AI & Automation Showcase
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-[16px] font-normal text-muted-foreground leading-[1.6]">
               Building intelligent systems that scale and adapt
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all hover:shadow-lg">
-              <Bot className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Nudge AI Engine</h3>
-              <p className="text-muted-foreground">
-                Built real-time personalization system using OpenAI and PostHog analytics to deliver context-aware nudges and adaptive learning paths.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all hover:shadow-lg">
-              <Zap className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Workflow Automation</h3>
-              <p className="text-muted-foreground">
-                Automated content and workflow generation with Clay, Zapier, and n8n integrations, reducing manual setup time by 60%.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all hover:shadow-lg">
-              <TrendingUp className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Intelligent Feedback Loops</h3>
-              <p className="text-muted-foreground">
-                Designed performance tuning pipelines with automated A/B testing and real-time analytics for continuous optimization.
-              </p>
-            </div>
+            {[
+              {
+                Icon: Bot,
+                title: "Nudge AI Engine",
+                body: "Built real-time personalization system using OpenAI and PostHog analytics to deliver context-aware nudges and adaptive learning paths.",
+              },
+              {
+                Icon: Zap,
+                title: "Workflow Automation",
+                body: "Automated content and workflow generation with Clay, Zapier, and n8n integrations, reducing manual setup time by 60%.",
+              },
+              {
+                Icon: TrendingUp,
+                title: "Intelligent Feedback Loops",
+                body: "Designed performance tuning pipelines with automated A/B testing and real-time analytics for continuous optimization.",
+              },
+            ].map(({ Icon, title, body }) => (
+              <div
+                key={title}
+                className="p-6 rounded-lg border bg-card hover:border-primary/50 transition-all hover:shadow-lg"
+                style={{ boxShadow: "var(--shadow-card)" }}
+              >
+                <Icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-[18px] font-semibold text-foreground mb-3">{title}</h3>
+                <p className="text-[15px] font-normal text-body leading-[1.7]">
+                  {body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

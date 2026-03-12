@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-4 text-muted-foreground">
-                Or connect with me
+                Or reach me directly at
               </span>
             </div>
           </div>

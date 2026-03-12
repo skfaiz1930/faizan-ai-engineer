@@ -1,64 +1,81 @@
-import { Search, Brain, BookOpen } from "lucide-react";
+const columns = [
+  {
+    icon: "🔬",
+    title: "Currently Exploring",
+    items: [
+      "Multi-agent systems and agent orchestration",
+      "LLM confidence calibration in production",
+      "Org intelligence as a product category",
+      "Vector databases and RAG architecture",
+      "Security compliance automation with AI",
+    ],
+  },
+  {
+    icon: "🛠️",
+    title: "Currently Building",
+    items: [
+      "ManagerOS — AI decision layer for engineering managers",
+      "InfoSec automation agent for enterprise audit workflows",
+      "Internal tooling for team health signal detection",
+    ],
+  },
+  {
+    icon: "📖",
+    title: "Currently Reading",
+    items: [
+      "The Hard Thing About Hard Things — Ben Horowitz",
+      "AWS Architecture Best Practices",
+      "OpenAI Cookbook",
+      "Research papers on organizational behavior and team dynamics",
+    ],
+  },
+];
 
 const LearningResearch = () => {
   return (
     <section id="learning" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12 animate-fade-in">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">
+
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <h2 className="text-[26px] md:text-[32px] font-bold text-foreground">
               📘 Learning & Research
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Exploring cutting-edge technologies and methodologies
+            <p className="text-[16px] font-normal text-muted-foreground">
+              What's on my mind right now
             </p>
           </div>
 
+          {/* Three-column cards */}
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <div className="flex gap-3">
-                <Search className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                  Exploring
-                </h3>
-              </div>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• AI Agents</li>
-                <li>• RAG pipelines</li>
-                <li>• LangGraph frameworks</li>
-                <li>• Vector databases</li>
-              </ul>
-            </div>
+            {columns.map(({ icon, title, items }) => (
+              <div
+                key={title}
+                className="p-6 rounded-lg border bg-card space-y-4"
+                style={{boxShadow: "var(--shadow-card)"}}
+              >
+                {/* Icon + title */}
+                <div className="space-y-1">
+                  <span className="text-2xl">{icon}</span>
+                  <h3 className="text-[12px] font-semibold text-primary/90 tracking-widest uppercase">
+                    {title}
+                  </h3>
+                </div>
 
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <div className="flex gap-3">
-                <Brain className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                  Building
-                </h3>
+                {/* Bullet list */}
+                <ul className="space-y-2.5">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-[14px] font-normal text-body leading-[1.6]">
+                      <span className="mt-1.5 w-1 h-1 rounded-full bg-primary/50 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Internal AI agent for system monitoring</li>
-                <li>• Predictive scaling automation</li>
-                <li>• Multi-agent collaboration systems</li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
-              <div className="flex gap-3">
-                <BookOpen className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold mb-3 text-primary/90">
-                  Reading
-                </h3>
-              </div>
-
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Growth Design - By Dan Benoni</li>
-                <li>• OpenAI Cookbook</li>
-                <li>• AWS Architecture Best Practices</li>
-              </ul>
-            </div>
+            ))}
           </div>
+
         </div>
       </div>
     </section>

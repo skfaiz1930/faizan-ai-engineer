@@ -5,6 +5,7 @@ import TechStack from "@/components/TechStack";
 import AIAutomation from "@/components/AIAutomation";
 import Projects from "@/components/Projects";
 import LearningResearch from "@/components/LearningResearch";
+import ManagerOSSection from "@/components/ManagerOSSection";
 import BeyondCode from "@/components/BeyondCode";
 import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
@@ -42,6 +43,7 @@ const Index = () => {
       <TechStack />
       <AIAutomation />
       <Projects />
+      <ManagerOSSection />
       <LearningResearch />
       <BeyondCode />
       <Footer />
