@@ -81,12 +81,12 @@ const Navbar = ({ onChatbotToggle }: NavbarProps) => {
   };
 
   return (
-    <nav className="fixed top-6 w-full justify-center items-center z-50 animate-fade-in hidden md:flex">
-      <div className="bg-background/70 backdrop-blur-xl border border-border/50 rounded-full px-2 py-2 shadow-lg flex items-center gap-3">
-        <ul ref={navRef} className="flex gap-1 items-center relative">
+    <nav className="fixed top-6 w-full justify-center items-center z-50 hidden md:flex">
+      <div className="bg-background/80 backdrop-blur-md border border-border/30 rounded-full px-3 py-1.5 flex items-center gap-2">
+        <ul ref={navRef} className="flex gap-0.5 items-center relative">
           {/* Sliding indicator */}
           <div
-            className="absolute bg-primary rounded-full transition-all duration-300 ease-out h-[calc(100%-4px)] top-[2px]"
+            className="absolute bg-primary/15 rounded-full transition-all duration-300 ease-out h-[calc(100%-4px)] top-[2px]"
             style={{
               left: `${indicatorStyle.left}px`,
               width: `${indicatorStyle.width}px`,
@@ -98,9 +98,9 @@ const Navbar = ({ onChatbotToggle }: NavbarProps) => {
               <button
                 data-section={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative z-10 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
                   activeSection === item.id
-                    ? "text-primary-foreground"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
