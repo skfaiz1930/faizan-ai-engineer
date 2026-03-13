@@ -1,10 +1,39 @@
+import {
+  Search,
+  AlertTriangle,
+  Shield,
+  BarChart3,
+  Handshake,
+  AlertCircle,
+  Lightbulb,
+  Star,
+} from "lucide-react";
+
 const features = [
-  { icon: "🔍", text: "Meeting analysis and insight extraction" },
-  { icon: "🚨", text: "Burnout and flight risk detection" },
-  { icon: "🛡️", text: "Psychological safety scoring" },
-  { icon: "📊", text: "Manager Effectiveness Score (MES)" },
-  { icon: "🤝", text: "Leadership coaching moments" },
-  { icon: "⚠️",  text: "Pseudo-alignment detection" },
+  {
+    icon: <Search className="w-4 h-4 text-primary" />,
+    text: "Meeting analysis and insight extraction",
+  },
+  {
+    icon: <AlertTriangle className="w-4 h-4 text-primary" />,
+    text: "Burnout and flight risk detection",
+  },
+  {
+    icon: <Shield className="w-4 h-4 text-primary" />,
+    text: "Psychological safety scoring",
+  },
+  {
+    icon: <BarChart3 className="w-4 h-4 text-primary" />,
+    text: "Manager Effectiveness Score (MES)",
+  },
+  {
+    icon: <Handshake className="w-4 h-4 text-primary" />,
+    text: "Leadership coaching moments",
+  },
+  {
+    icon: <AlertCircle className="w-4 h-4 text-primary" />,
+    text: "Pseudo-alignment detection",
+  },
 ];
 
 const ManagerOSSection = () => {
@@ -21,7 +50,6 @@ const ManagerOSSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-
           {/* ── Left column ── */}
           <div className="space-y-8 animate-fade-in">
             {/* Eyebrow */}
@@ -42,17 +70,26 @@ const ManagerOSSection = () => {
             {/* Body */}
             <div className="space-y-4 text-[15px] font-normal text-body leading-[1.75] max-w-lg">
               <p>
-                Most engineering managers are flying blind. They run 1:1s, read status updates, and sit in standups — but by the time they see a real problem, it's already too late. The best engineer has gone quiet. The team is burning out. The delivery is slipping.
+                Most engineering managers are flying blind. They run 1:1s, read
+                status updates, and sit in standups — but by the time they see a
+                real problem, it's already too late. The best engineer has gone
+                quiet. The team is burning out. The delivery is slipping.
               </p>
               <p>
-                ManagerOS is an AI system that listens to what's actually happening — in meetings, in feedback, in team signals — and surfaces what managers need to act on before it becomes a crisis.
+                ManagerOS is an AI system that listens to what's actually
+                happening — in meetings, in feedback, in team signals — and
+                surfaces what managers need to act on before it becomes a
+                crisis.
               </p>
             </div>
 
             {/* Feature list */}
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
               {features.map(({ icon, text }) => (
-                <li key={text} className="flex items-start gap-2.5 text-[14px] font-normal text-body">
+                <li
+                  key={text}
+                  className="flex items-start gap-2.5 text-[14px] font-normal text-body"
+                >
                   <span className="mt-0.5 text-base leading-none">{icon}</span>
                   <span>{text}</span>
                 </li>
@@ -105,8 +142,12 @@ const ManagerOSSection = () => {
                       Manager Effectiveness Score
                     </p>
                     <div className="flex items-end gap-2">
-                      <span className="text-[38px] font-bold text-foreground/90">82</span>
-                      <span className="text-[13px] text-green-400 mb-1">↑ +4 this week</span>
+                      <span className="text-[38px] font-bold text-foreground/90">
+                        82
+                      </span>
+                      <span className="text-[13px] text-green-400 mb-1">
+                        ↑ +4 this week
+                      </span>
                     </div>
                     <div className="w-full h-1.5 rounded-full bg-muted/30 overflow-hidden">
                       <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-primary to-blue-400" />
@@ -115,20 +156,44 @@ const ManagerOSSection = () => {
 
                   {/* Signal rows */}
                   {[
-                    { label: "Burnout Risk", value: "Low", color: "text-green-400" },
-                    { label: "Psych Safety", value: "74 / 100", color: "text-blue-400" },
-                    { label: "Flight Risk",  value: "1 alert",  color: "text-yellow-400" },
+                    {
+                      label: "Burnout Risk",
+                      value: "Low",
+                      color: "text-green-400",
+                    },
+                    {
+                      label: "Psych Safety",
+                      value: "74 / 100",
+                      color: "text-blue-400",
+                    },
+                    {
+                      label: "Flight Risk",
+                      value: "1 alert",
+                      color: "text-yellow-400",
+                    },
                   ].map(({ label, value, color }) => (
-                    <div key={label} className="flex items-center justify-between py-2 border-b border-border/20 last:border-0">
-                      <span className="text-[12px] text-muted-foreground/60">{label}</span>
-                      <span className={`text-[12px] font-medium ${color}`}>{value}</span>
+                    <div
+                      key={label}
+                      className="flex items-center justify-between py-2 border-b border-border/20 last:border-0"
+                    >
+                      <span className="text-[12px] text-muted-foreground/60">
+                        {label}
+                      </span>
+                      <span className={`text-[12px] font-medium ${color}`}>
+                        {value}
+                      </span>
                     </div>
                   ))}
 
                   {/* Insight chip */}
                   <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-3">
                     <p className="text-[12px] text-muted-foreground leading-relaxed">
-                      💡 <span className="text-foreground/80 font-medium">Insight:</span> Alex has been unusually quiet in the last 3 standups. Consider a check-in.
+                      <Lightbulb className="w-3 h-3 inline mr-1.5 text-primary" />{" "}
+                      <span className="text-foreground/80 font-medium">
+                        Insight:
+                      </span>{" "}
+                      Alex has been unusually quiet in the last 3 standups.
+                      Consider a check-in.
                     </p>
                   </div>
                 </div>
@@ -142,7 +207,6 @@ const ManagerOSSection = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

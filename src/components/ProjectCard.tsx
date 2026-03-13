@@ -1,6 +1,12 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Flame } from "lucide-react";
+import { Flame, Star } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -50,7 +56,7 @@ const ProjectCard = ({
       {isBest && !featured && (
         <div className="absolute top-0 right-0 z-20">
           <Badge className="rounded-tl rounded-tr rounded-br-none bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-4 py-1.5 shadow-lg text-[11px]">
-            ⭐ Best Project
+            <Star className="w-3.5 h-3.5" /> Best Project
           </Badge>
         </div>
       )}
@@ -67,7 +73,9 @@ const ProjectCard = ({
 
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <CardHeader className={`relative${featured || liveLabel || (isBest && !featured) ? " pt-10" : ""}`}>
+      <CardHeader
+        className={`relative${featured || liveLabel || (isBest && !featured) ? " pt-10" : ""}`}
+      >
         <div className="space-y-2">
           {categoryTags.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-1">
@@ -97,25 +105,42 @@ const ProjectCard = ({
 
       <CardContent className="relative space-y-4">
         <div className="space-y-1.5">
-          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-destructive">Problem</h4>
-          <p className="text-[14px] font-normal text-body leading-[1.7]">{problem}</p>
+          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-destructive">
+            Problem
+          </h4>
+          <p className="text-[14px] font-normal text-body leading-[1.7]">
+            {problem}
+          </p>
         </div>
 
         <div className="space-y-1.5">
-          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-primary">Solution</h4>
-          <p className="text-[14px] font-normal text-body leading-[1.7]">{solution}</p>
+          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-primary">
+            Solution
+          </h4>
+          <p className="text-[14px] font-normal text-body leading-[1.7]">
+            {solution}
+          </p>
         </div>
 
         <div className="space-y-1.5">
-          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-accent">Impact</h4>
-          <p className="text-[14px] font-medium text-body leading-[1.7]">{impact}</p>
+          <h4 className="text-[12px] font-semibold uppercase tracking-wide text-accent light:text-accent-foreground">
+            Impact
+          </h4>
+          <p className="text-[14px] font-medium text-body leading-[1.7]">
+            {impact}
+          </p>
         </div>
 
         <div className="space-y-2 pt-3 border-t border-border/50">
-          <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-widest">Tech Stack</h4>
+          <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-widest">
+            Tech Stack
+          </h4>
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech) => (
-              <span key={tech} className="tech-pill text-[11px] font-medium px-2.5 py-1 rounded-full">
+              <span
+                key={tech}
+                className="tech-pill text-[11px] font-medium px-2.5 py-1 rounded-full"
+              >
                 {tech}
               </span>
             ))}

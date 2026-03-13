@@ -1,6 +1,8 @@
+import { Microscope, Wrench, BookOpen } from "lucide-react";
+
 const columns = [
   {
-    icon: "🔬",
+    icon: <Microscope className="w-6 h-6 text-primary" />,
     title: "Currently Exploring",
     items: [
       "Multi-agent systems and agent orchestration",
@@ -11,7 +13,7 @@ const columns = [
     ],
   },
   {
-    icon: "🛠️",
+    icon: <Wrench className="w-6 h-6 text-primary" />,
     title: "Currently Building",
     items: [
       "ManagerOS — AI decision layer for engineering managers",
@@ -20,7 +22,7 @@ const columns = [
     ],
   },
   {
-    icon: "📖",
+    icon: <BookOpen className="w-6 h-6 text-primary" />,
     title: "Currently Reading",
     items: [
       "The Hard Thing About Hard Things — Ben Horowitz",
@@ -36,11 +38,11 @@ const LearningResearch = () => {
     <section id="learning" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12 animate-fade-in">
-
           {/* Header */}
           <div className="text-center space-y-2">
             <h2 className="text-[26px] md:text-[32px] font-bold text-foreground">
-              📘 Learning & Research
+              
+              📖 Learning & Research
             </h2>
             <p className="text-[16px] font-normal text-muted-foreground">
               What's on my mind right now
@@ -53,12 +55,12 @@ const LearningResearch = () => {
               <div
                 key={title}
                 className="p-6 rounded-lg border bg-card space-y-4"
-                style={{boxShadow: "var(--shadow-card)"}}
+                style={{ boxShadow: "var(--shadow-card)" }}
               >
                 {/* Icon + title */}
                 <div className="space-y-1">
-                  <span className="text-2xl">{icon}</span>
-                  <h3 className="text-[12px] font-semibold text-primary/90 tracking-widest uppercase">
+                  {icon}
+                  <h3 className="text-[12px] font-semibold text-primary tracking-widest uppercase">
                     {title}
                   </h3>
                 </div>
@@ -66,7 +68,10 @@ const LearningResearch = () => {
                 {/* Bullet list */}
                 <ul className="space-y-2.5">
                   {items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-[14px] font-normal text-body leading-[1.6]">
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-[14px] font-normal text-body leading-[1.6]"
+                    >
                       <span className="mt-1.5 w-1 h-1 rounded-full bg-primary/50 shrink-0" />
                       {item}
                     </li>
@@ -75,7 +80,6 @@ const LearningResearch = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

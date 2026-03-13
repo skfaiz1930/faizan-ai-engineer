@@ -8,7 +8,7 @@ import {
   Users,
   Rocket,
   Lock,
-  Compass
+  Compass,
 } from "lucide-react";
 
 const techCategories = [
@@ -101,7 +101,8 @@ const TechStack = () => {
               Things I've Actually Used in Production
             </h2>
             <p className="text-[16px] font-normal text-muted-foreground leading-[1.6] max-w-2xl mx-auto">
-              Not a list of tutorials I've watched. Every tool here has been used to ship something real.
+              Not a list of tutorials I've watched. Every tool here has been
+              used to ship something real.
             </p>
           </div>
 
