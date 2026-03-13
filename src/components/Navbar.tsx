@@ -9,22 +9,41 @@ interface NavbarProps {
 
 const Navbar = ({ onChatbotToggle }: NavbarProps) => {
   const [activeSection, setActiveSection] = useState("hero");
-  const [scrolled, setScrolled] = useState(false);
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const navRef = useRef<HTMLUListElement>(null);
 
   const navItems = [
     { id: "hero", label: "Home" },
-    { id: "journey", label: "Journey" },
-    { id: "projects", label: "Work" },
-    { id: "manageros", label: "ManagerOS" },
-    { id: "thinking", label: "Thinking" },
+    { id: "tech", label: "Tech Stack" },
+    { id: "ai", label: "AI & Automation" },
+    { id: "projects", label: "Projects" },
+    { id: "learning", label: "Learning" },
+    { id: "beyond", label: "About" },
     { id: "contact", label: "Contact" },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const updateIndicator = () => {
+      if (navRef.current) {
+        const activeButton = navRef.current.querySelector(
+          `[data-section="${activeSection}"]`
+        ) as HTMLElement;
+        if (activeButton) {
+          setIndicatorStyle({
+            left: activeButton.offsetLeft,
+            width: activeButton.offsetWidth,
+          });
+        }
+      }
+    };
 
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [activeSection]);
+
+  useEffect(() => {
+    const handleScroll = () => {
       const sections = navItems.map((item) => ({
         id: item.id,
         element: document.getElementById(item.id),
@@ -62,31 +81,26 @@ const Navbar = ({ onChatbotToggle }: NavbarProps) => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <div className="max-w-[1080px] mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => scrollToSection("hero")}
-          className="text-[15px] font-bold text-foreground"
-        >
-          Faizan
-        </button>
-
-        {/* Nav links - desktop */}
-        <ul ref={navRef} className="hidden md:flex items-center gap-1">
+    <nav className="fixed top-6 w-full justify-center items-center z-50 hidden md:flex">
+      <div className="bg-background/80 backdrop-blur-md border border-border/30 rounded-full px-3 py-1.5 flex items-center gap-2">
+        <ul ref={navRef} className="flex gap-0.5 items-center relative">
+          {/* Sliding indicator */}
+          <div
+            className="absolute bg-primary/15 rounded-full transition-all duration-300 ease-out h-[calc(100%-4px)] top-[2px]"
+            style={{
+              left: `${indicatorStyle.left}px`,
+              width: `${indicatorStyle.width}px`,
+            }}
+          />
+          
           {navItems.map((item) => (
             <li key={item.id}>
               <button
+                data-section={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-1.5 text-[13px] transition-colors ${
+                className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
                   activeSection === item.id
-                    ? "text-foreground font-medium"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -95,15 +109,13 @@ const Navbar = ({ onChatbotToggle }: NavbarProps) => {
             </li>
           ))}
         </ul>
-
-        {/* Right side */}
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={onChatbotToggle}
-            className="text-muted-foreground hover:text-foreground"
-            title="Chat with Faizan"
+            className="hover:bg-accent hover:text-accent-foreground"
+            title="Toggle AI Assistant"
           >
             <Bot className="h-5 w-5" />
           </Button>

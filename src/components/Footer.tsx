@@ -1,48 +1,78 @@
+import { Linkedin, Github } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="border-t border-border">
-      {/* Contact section */}
-      <div className="py-16 md:py-24">
-        <div className="max-w-[560px] mx-auto px-6 text-center mb-12">
-          <h2 className="text-[30px] font-bold text-foreground mb-4">
-            Let's talk
-          </h2>
-          <p className="text-[15px] text-muted-foreground leading-[1.8]">
-            Building something in AI or org intelligence? Want early access to
-            ManagerOS? Or just want to connect with someone who thinks about
-            these problems every day.
-          </p>
-        </div>
+    <footer
+      id="contact"
+      className="py-20 border-t border-border/50 relative overflow-hidden"
+    >
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30 pointer-events-none" />
 
-        <ContactForm />
-      </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto space-y-12">
+          {/* Contact Form Section */}
+          <div className="animate-fade-in">
+            <ContactForm />
+          </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-border py-8 px-6">
-        <div className="max-w-[1080px] mx-auto flex items-center justify-between">
-          <p className="text-[13px] text-muted-foreground">
-            © 2026 Shaikh Faizan · Mumbai, India
-          </p>
-          <div className="flex items-center gap-4">
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-border/30" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-4 text-muted-foreground">
+                Or reach me directly at
+              </span>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-wrap gap-6 justify-center items-center">
+            <a
+              href="mailto:skfaiz0929@gmail.com"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
+            >
+              <span className="relative">
+                <span className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/40 transition-all duration-300" />
+                <span className="relative text-foreground group-hover:text-primary transition-colors">
+                  skfaiz0929@gmail.com
+                </span>
+              </span>
+            </a>
+            <span className="hidden md:inline text-muted-foreground">|</span>
             <a
               href="https://www.linkedin.com/in/shaikh-faizan-66b443216/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
-              LinkedIn
+              <Linkedin className="h-5 w-5 group-hover:text-primary transition-colors" />
+              <span className="text-foreground group-hover:text-primary transition-colors">
+                LinkedIn
+              </span>
             </a>
+            <span className="hidden md:inline text-muted-foreground">|</span>
             <a
               href="https://github.com/skfaiz1930"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+              className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:scale-110"
             >
-              GitHub
+              <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
+              <span className="text-foreground group-hover:text-primary transition-colors">
+                GitHub
+              </span>
             </a>
           </div>
+
+          {/* Copyright */}
+          <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border/30">
+            © {new Date().getFullYear()} Faizan. Built with React & Tailwind
+            CSS.
+          </p>
         </div>
       </div>
     </footer>

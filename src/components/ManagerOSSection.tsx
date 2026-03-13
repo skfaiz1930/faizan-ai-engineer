@@ -1,3 +1,41 @@
+import {
+  Search,
+  AlertTriangle,
+  Shield,
+  BarChart3,
+  Handshake,
+  AlertCircle,
+  Lightbulb,
+  Star,
+} from "lucide-react";
+
+const features = [
+  {
+    icon: <Search className="w-4 h-4 text-primary" />,
+    text: "Meeting analysis and insight extraction",
+  },
+  {
+    icon: <AlertTriangle className="w-4 h-4 text-primary" />,
+    text: "Burnout and flight risk detection",
+  },
+  {
+    icon: <Shield className="w-4 h-4 text-primary" />,
+    text: "Psychological safety scoring",
+  },
+  {
+    icon: <BarChart3 className="w-4 h-4 text-primary" />,
+    text: "Manager Effectiveness Score (MES)",
+  },
+  {
+    icon: <Handshake className="w-4 h-4 text-primary" />,
+    text: "Leadership coaching moments",
+  },
+  {
+    icon: <AlertCircle className="w-4 h-4 text-primary" />,
+    text: "Pseudo-alignment detection",
+  },
+];
+
 const ManagerOSSection = () => {
   const scrollTo = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault();
@@ -5,112 +43,170 @@ const ManagerOSSection = () => {
   };
 
   return (
-    <section id="manageros" className="py-16 md:py-24 border-t border-border">
-      <div className="max-w-[720px] mx-auto px-6">
-        {/* Label */}
-        <p className="text-[13px] text-muted-foreground mb-4">
-          What I'm building right now
-        </p>
+    <section id="manageros" className="py-24 relative overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
 
-        {/* Title */}
-        <h2 className="text-[36px] font-extrabold text-foreground leading-[1.1] mb-3">
-          ManagerOS
-        </h2>
-
-        {/* Subtitle */}
-        <p className="text-[20px] text-muted-foreground font-normal mb-8">
-          AI decision infrastructure for engineering managers
-        </p>
-
-        {/* Divider */}
-        <div className="h-px bg-border w-full mb-8" />
-
-        {/* Body */}
-        <div className="space-y-5 mb-12">
-          <p className="text-[17px] text-muted-foreground leading-[1.8]">
-            Most engineering managers are flying blind. They run 1:1s, read
-            status updates, sit in standups — but by the time they see a real
-            problem, it's already too late. The best engineer has gone quiet. The
-            team is burning out. The delivery is slipping.
-          </p>
-          <p className="text-[17px] text-muted-foreground leading-[1.8]">
-            ManagerOS listens to what's actually happening — in meetings, in
-            feedback, in team signals — and surfaces what managers need to act on
-            before it becomes a crisis.
-          </p>
-        </div>
-
-        {/* Feature list */}
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-3 mb-12 border-t border-border pt-8">
-          {[
-            "Meeting analysis & insight extraction",
-            "Manager Effectiveness Score (MES)",
-            "Burnout & flight risk detection",
-            "Leadership coaching moments",
-            "Psychological safety scoring",
-            "Pseudo-alignment detection",
-          ].map((feature) => (
-            <p
-              key={feature}
-              className="text-[15px] text-muted-foreground py-1"
-            >
-              — {feature}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          {/* ── Left column ── */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Eyebrow */}
+            <p className="text-[11px] font-semibold tracking-[0.12em] uppercase text-blue-400/80">
+              Currently Building
             </p>
-          ))}
-        </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-3 border border-border rounded-xl mb-12">
-          {[
-            { label: "Status", value: "Solo build" },
-            { label: "Stage", value: "Early validation" },
-            { label: "Looking for", value: "Co-founder" },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`text-center py-5 ${
-                i < 2 ? "border-r border-border" : ""
-              }`}
-            >
-              <p className="text-[12px] text-muted-foreground mb-1">
-                {stat.label}
-              </p>
-              <p className="text-[15px] font-semibold text-foreground">
-                {stat.value}
+            {/* Title + subtitle */}
+            <div className="space-y-3">
+              <h2 className="text-[36px] md:text-[48px] font-bold tracking-tight text-foreground">
+                ManagerOS
+              </h2>
+              <p className="text-[17px] font-normal text-body leading-[1.6]">
+                AI decision infrastructure for engineering managers
               </p>
             </div>
-          ))}
-        </div>
 
-        {/* Insight card */}
-        <div className="bg-card border-l-[3px] border-l-primary rounded-xl p-5 mb-10 border border-border">
-          <p className="text-[15px] text-muted-foreground leading-[1.7] mb-3">
-            "Alex has been unusually quiet in the last 3 standups. Psychological
-            safety score dropped 8 points this week. Recommend a 1:1 before
-            Friday."
-          </p>
-          <p className="text-[12px] text-muted-foreground/60">
-            ManagerOS · Sample Insight · Alpha
-          </p>
-        </div>
+            {/* Body */}
+            <div className="space-y-4 text-[15px] font-normal text-body leading-[1.75] max-w-lg">
+              <p>
+                Most engineering managers are flying blind. They run 1:1s, read
+                status updates, and sit in standups — but by the time they see a
+                real problem, it's already too late. The best engineer has gone
+                quiet. The team is burning out. The delivery is slipping.
+              </p>
+              <p>
+                ManagerOS is an AI system that listens to what's actually
+                happening — in meetings, in feedback, in team signals — and
+                surfaces what managers need to act on before it becomes a
+                crisis.
+              </p>
+            </div>
 
-        {/* CTAs */}
-        <div className="flex items-center gap-4">
-          <a
-            href="#contact"
-            onClick={scrollTo("contact")}
-            className="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground text-[15px] font-semibold hover:opacity-90 transition-opacity"
-          >
-            Request Early Access
-          </a>
-          <a
-            href="https://themanageros.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-          >
-            themanageros.com →
-          </a>
+            {/* Feature list */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+              {features.map(({ icon, text }) => (
+                <li
+                  key={text}
+                  className="flex items-start gap-2.5 text-[14px] font-normal text-body"
+                >
+                  <span className="mt-0.5 text-base leading-none">{icon}</span>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href="#contact"
+                onClick={scrollTo("contact")}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-[14px] font-medium hover:brightness-110 transition-all duration-200 shadow-lg shadow-primary/20"
+              >
+                Request Early Access
+              </a>
+              <a
+                href="#projects"
+                onClick={scrollTo("projects")}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border/60 text-[14px] font-medium text-muted-foreground hover:text-foreground hover:border-primary/50 hover:bg-primary/5 transition-all duration-200"
+              >
+                Learn More →
+              </a>
+            </div>
+          </div>
+
+          {/* ── Right column — mock dashboard ── */}
+          <div className="flex items-center justify-center animate-fade-in">
+            {/* Animated gradient border wrapper */}
+            <div className="relative w-full max-w-sm rounded-2xl p-px overflow-hidden">
+              {/* Pulsing gradient border */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/40 via-primary/30 to-blue-800/20 animate-pulse" />
+
+              {/* Inner dark card */}
+              <div className="relative rounded-2xl bg-card overflow-hidden">
+                {/* Fake top bar */}
+                <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border/30">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                  <span className="ml-3 text-[11px] text-muted-foreground/50 font-mono">
+                    themanageros.com
+                  </span>
+                </div>
+
+                {/* Mock content */}
+                <div className="px-6 py-8 space-y-5">
+                  {/* MES score */}
+                  <div className="space-y-1.5">
+                    <p className="text-[10px] text-muted-foreground/50 uppercase tracking-widest">
+                      Manager Effectiveness Score
+                    </p>
+                    <div className="flex items-end gap-2">
+                      <span className="text-[38px] font-bold text-foreground/90">
+                        82
+                      </span>
+                      <span className="text-[13px] text-green-400 mb-1">
+                        ↑ +4 this week
+                      </span>
+                    </div>
+                    <div className="w-full h-1.5 rounded-full bg-muted/30 overflow-hidden">
+                      <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-primary to-blue-400" />
+                    </div>
+                  </div>
+
+                  {/* Signal rows */}
+                  {[
+                    {
+                      label: "Burnout Risk",
+                      value: "Low",
+                      color: "text-green-400",
+                    },
+                    {
+                      label: "Psych Safety",
+                      value: "74 / 100",
+                      color: "text-blue-400",
+                    },
+                    {
+                      label: "Flight Risk",
+                      value: "1 alert",
+                      color: "text-yellow-400",
+                    },
+                  ].map(({ label, value, color }) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-between py-2 border-b border-border/20 last:border-0"
+                    >
+                      <span className="text-[12px] text-muted-foreground/60">
+                        {label}
+                      </span>
+                      <span className={`text-[12px] font-medium ${color}`}>
+                        {value}
+                      </span>
+                    </div>
+                  ))}
+
+                  {/* Insight chip */}
+                  <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-3">
+                    <p className="text-[12px] text-muted-foreground leading-relaxed">
+                      <Lightbulb className="w-3 h-3 inline mr-1.5 text-primary" />{" "}
+                      <span className="text-foreground/80 font-medium">
+                        Insight:
+                      </span>{" "}
+                      Alex has been unusually quiet in the last 3 standups.
+                      Consider a check-in.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom label */}
+                <div className="px-6 pb-5 text-center">
+                  <p className="text-[10px] text-muted-foreground/30 tracking-widest uppercase font-mono">
+                    ManagerOS · Alpha Preview
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

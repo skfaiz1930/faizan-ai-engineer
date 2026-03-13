@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Journey from "@/components/Journey";
+import TechStack from "@/components/TechStack";
+import AIAutomation from "@/components/AIAutomation";
 import Projects from "@/components/Projects";
+import LearningResearch from "@/components/LearningResearch";
 import ManagerOSSection from "@/components/ManagerOSSection";
-import Thinking from "@/components/Thinking";
+import BeyondCode from "@/components/BeyondCode";
 import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
 import UserDetailsPopup from "@/components/UserDetailsPopup";
@@ -21,7 +23,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <CursorTrail />
       <UserDetailsPopup delayMs={10000} />
       <Navbar onChatbotToggle={handleOpenChat} />
@@ -38,10 +40,12 @@ const Index = () => {
         }}
       />
       <Hero />
-      <Journey />
+      <TechStack />
+      <AIAutomation />
       <Projects />
       <ManagerOSSection />
-      <Thinking />
+      <LearningResearch />
+      <BeyondCode />
       <Footer />
     </div>
   );
