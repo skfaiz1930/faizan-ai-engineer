@@ -4,25 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faizan - AI Engineer | SDE III</title>
-    <meta name="description" content="AI Engineer & SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users.">
+    <meta
+      name="description"
+      content="AI Engineer & SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users."
+    />
     <meta name="author" content="Faiz" />
 
-    
-    
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <meta property="og:title" content="Faizan - AI Engineer | SDE III">
-  <meta name="twitter:title" content="Faizan - AI Engineer | SDE III">
-  <meta property="og:description" content="AI Engineer &amp; SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users.">
-  <meta name="twitter:description" content="AI Engineer &amp; SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users.">
-</head>
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+    <meta property="og:title" content="Faizan - AI Engineer | SDE III" />
+    <meta name="twitter:title" content="Faizan - AI Engineer | SDE III" />
+    <meta
+      property="og:description"
+      content="AI Engineer &amp; SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users."
+    />
+    <meta
+      name="twitter:description"
+      content="AI Engineer &amp; SDE III specializing in secure, scalable systems, DevOps, and AI automation. Built applications for 50K+ users."
+    />
+  </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // Wait for DOM to be fully loaded, then run with highest priority
+      document.addEventListener("DOMContentLoaded", function () {
+        // Use setTimeout to ensure this runs after all other DOMContentLoaded listeners
+        setTimeout(function () {
+          // Force hide the lovable badge - override any other scripts
+          var badge = document.getElementById("lovable-badge");
+          if (badge) {
+            badge.style.setProperty("display", "none", "important");
+            badge.style.setProperty("visibility", "hidden", "important");
+            badge.style.setProperty("opacity", "0", "important");
+            badge.style.setProperty("z-index", "-9999", "important");
+          }
+
+          // Also hide any potential lovable badge variations
+          var badges = document.querySelectorAll(
+            '[id*="lovable"], [class*="lovable"]',
+          );
+          badges.forEach(function (el) {
+            if (el.id.includes("badge") || el.className.includes("badge")) {
+              el.style.setProperty("display", "none", "important");
+              el.style.setProperty("visibility", "hidden", "important");
+              el.style.setProperty("opacity", "0", "important");
+              el.style.setProperty("z-index", "-9999", "important");
+            }
+          });
+        }, 0);
+      });
+
+      // Also run immediately in case DOM is already loaded
+      (function () {
+        var badge = document.getElementById("lovable-badge");
+        if (badge) {
+          badge.style.setProperty("display", "none", "important");
+          badge.style.setProperty("visibility", "hidden", "important");
+          badge.style.setProperty("opacity", "0", "important");
+          badge.style.setProperty("z-index", "-9999", "important");
+        }
+      })();
+    </script>
   </body>
 </html>
