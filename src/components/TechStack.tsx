@@ -9,83 +9,163 @@ import {
   Rocket,
   Lock,
   Compass,
+  Activity,
+  Database
 } from "lucide-react";
 
 const techCategories = [
   {
     icon: Code2,
-    title: "Core Languages",
-    items: ["Node.js", "Python", "TypeScript", "JavaScript"],
+    title: "Core Languages & Frameworks",
+    items: [
+      "Python",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Java"
+    ],
   },
+
   {
     icon: Cloud,
     title: "Cloud & Infrastructure",
-    items: ["AWS", "Docker", "Jenkins", "RabbitMQ", "Nginx", "Redis", "Vercel"],
+    items: [
+      "AWS",
+      "Docker",
+      "Bedrock",
+      "Agent Core",
+      "Lambda",
+      "ECS",
+      "ECR",
+      "API Gateway",
+      "CloudWatch",
+      "X-Ray",
+      "IAM",
+      "VPC",
+      "Secrets Manager",
+    ],
   },
+
   {
     icon: Bot,
-    title: "AI, Automation & Agents",
-    items: ["OpenAI", "Clay", "Zapier", "Cursor", "Windsurf", "Lovable"],
+    title: "AI, LLMs & Agent Systems",
+    items: [
+      "OpenAI API",
+      "LLM Agents",
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "Prompt Engineering",
+      "Tool Calling",
+      "AI Workflows",
+      "Agent Orchestration",
+      "Embeddings",
+      "Vector Search"
+    ],
   },
+
   {
-    icon: BarChart3,
-    title: "Product & Analytics",
-    items: ["PostHog", "Metabase", "Google Analytics", "Microsoft Clarity"],
+    icon: Database,
+    title: "Data & Backend Systems",
+    items: [
+      "FastAPI",
+      "Node.js",
+      "REST APIs",
+      "Microservices",
+      "Distributed Systems",
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Redis",
+      "RabbitMQ",
+      "Celery",
+      "ETL Pipelines",
+      "Data Processing",
+      "pgvector"
+    ],
   },
+
   {
     icon: Layers,
     title: "Frontend Frameworks",
-    items: ["React", "Angular", "Tailwind CSS", "Next.js"],
-  },
-  {
-    icon: Lock,
-    title: "Security & Compliance",
     items: [
-      "VAPT",
-      "ISO 27001",
-      "AWS Secrets Manager",
-      "IAM Policies",
-      "DLP",
-      "BCP",
+      "React",
+      "Next.js",
+      "Angular",
+      "Tailwind CSS"
     ],
   },
+
+  {
+    icon: Activity,
+    title: "Observability & Reliability",
+    items: [
+      "Prometheus",
+      "Grafana",
+      "CloudWatch",
+      "Logging",
+      "Monitoring",
+      "Alerting",
+      "Incident Management",
+      "Performance Optimization"
+    ],
+  },
+
   {
     icon: Rocket,
     title: "DevOps & Deployment",
     items: [
+      "CI/CD",
       "Bitbucket Pipelines",
       "GitHub Actions",
-      "CI/CD",
+      "Jenkins",
       "SonarCloud",
-      "CloudWatch",
-      "Prometheus",
-      "Grafana",
+      "Docker Compose",
+      "Containerization"
     ],
   },
+
   {
-    icon: Users,
-    title: "Product Management & Research",
+    icon: Lock,
+    title: "Security & Compliance",
     items: [
-      "A/B Testing",
-      "User Interviews",
-      "Product Roadmapping",
-      "Feature Prioritization",
+      "ISO 27001",
+      "VAPT",
+      "AWS IAM",
+      "DLP",
+      "AWS Security",
+      "Secrets Management",
+      "Infrastructure Hardening"
     ],
   },
+
+  {
+    icon: BarChart3,
+    title: "Product & Analytics",
+    items: [
+      "PostHog",
+      "Metabase",
+      "Google Analytics",
+      "A/B Testing",
+      "User Analytics",
+      "Experimentation"
+    ],
+  },
+
   {
     icon: Compass,
     title: "Leadership & Founder Mindset",
     items: [
-      "Solo Founder",
       "0 to 1 Building",
+      "AI Product Development",
       "User Interviews",
-      "Async Team Leadership",
-      "Super 20 (Mentorship Program)",
-      "Hiring & Talent Spotting",
-      "Security Audit Leadership",
+      "Technical Leadership",
+      "Mentoring Engineers",
+      "System Design",
       "Cross-functional Collaboration",
-      "Stakeholder Communication",
       "Decision Making Under Ambiguity",
+      "Super 20 Mentorship Program"
     ],
   },
 ];
@@ -113,9 +193,8 @@ const TechStack = () => {
               return (
                 <div
                   key={category.title}
-                  className={`p-6 rounded-lg border bg-card hover:border-primary/50 transition-all${
-                    isLast ? " md:col-span-2 lg:col-span-3" : ""
-                  }`}
+                  className={`p-6 rounded-lg border bg-card hover:border-primary/50 transition-all${isLast ? " md:col-span-2 lg:col-span-3" : ""
+                    }`}
                   style={{
                     animationDelay: `${categoryIndex * 100}ms`,
                     boxShadow: "var(--shadow-card)",

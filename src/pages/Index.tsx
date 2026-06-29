@@ -40,9 +40,9 @@ const Index = () => {
         }}
       />
       <Hero />
+      <Projects />
       <TechStack />
       <AIAutomation />
-      <Projects />
       <ManagerOSSection />
       <LearningResearch />
       <BeyondCode />

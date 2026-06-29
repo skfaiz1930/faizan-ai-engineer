@@ -5,6 +5,31 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
+    title: "Great Manager AI",
+    tagline: "Conversational coaching agent that turns survey data into real-time manager guidance",
+    problem:
+      "Managers receive CDI survey scores and team feedback once a quarter — but the insight is locked in dashboards they don't have time to read. Coaching is expensive, rare, and generic. By the time a manager acts, the window has already closed.",
+    solution:
+      "Built a production AI coaching agent that lets managers have a natural language conversation about their actual team data. The agent retrieves live CDI scores, verbatim team feedback, benchmark comparisons, and coaching nudges — then synthesizes them into specific, grounded advice. Cross-session memory means the agent remembers each manager's growth themes and blindspots across weeks of conversations.",
+    impact:
+      "In production on the Great Manager Institute platform. Coaches managers using their real survey data with zero hardcoded responses — every answer is grounded in what the agent retrieves at runtime.",
+    techStack: [
+      "LangGraph",
+      "OpenAI GPT-4o",
+      "AWS Bedrock",
+      "AgentCore",
+      "pgvector",
+      "PostgreSQL",
+      "Docker",
+      "AWS Lambda",
+      "SSE",
+    ],
+    categoryTags: ["AI", "Backend"],
+    category: "AI & Automation",
+    featured: true,
+    isBest: false,
+  },
+  {
     title: "AI Incident Response Agent",
     tagline: "Autonomous production failure detection, diagnosis, and remediation",
     problem:
@@ -16,7 +41,7 @@ const projects = [
     techStack: ["LLM Tool Calling", "Node.js", "AWS", "RAG", "OpenAI"],
     categoryTags: ["AI", "DevOps"],
     category: "AI & Automation",
-    featured: true,
+    featured: false,
     isBest: false,
   },
   {

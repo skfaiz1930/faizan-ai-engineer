@@ -26,15 +26,17 @@ const Hero = () => {
           {/* Bio paragraphs */}
           <div className="space-y-5 text-left">
             <p className="text-[17px] font-normal leading-[1.8] text-body">
-              I build systems that make organizations visible to themselves. 4 years shipping AI products, scaling infrastructure, and solving problems most engineers don't notice until they become incidents.
+          I build AI systems that go from ideas to production.
+
+Over the last 4.5+ years, I’ve been building scalable backend systems, LLM-powered applications, multi-agent workflows, and automation platforms that solve real-world problems.
             </p>
 
             <p className="text-[17px] font-normal leading-[1.8] text-body">
-              Currently building ManagerOS — an AI decision layer for engineering managers. It surfaces burnout signals, psychological safety scores, and leadership blind spots before they become people problems.
+             I focus on building end-to-end AI systems — from data pipelines and retrieval layers to agent orchestration, tool integrations, APIs, and production infrastructure.
             </p>
 
-            <p className="text-[13px] font-normal leading-[1.6] text-muted-foreground">
-              Open to: early ManagerOS users · people thinking seriously about AI in organizations and people who love breaking programs.
+               <p className="text-[17px] font-normal leading-[1.8] text-body">
+           I’ve built AI agents that can reason, retrieve context, take actions, and automate complex workflows while running reliably in production. I enjoy working on hard engineering problems where AI moves beyond demos and becomes a system people can depend on.
             </p>
           </div>
 
